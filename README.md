@@ -1,6 +1,7 @@
 ### Run the script with a correct product_id
 1. `groovy ./scripts/Main.groovy -p 269112`
-2. Input username and password to access productInformationCloud
+2. Input token for RoiTestApi
+3. Input username and password to access productInformationCloud
 
 
 ### Run unit tests
