@@ -203,6 +203,3 @@ def startUi() {
 
 // START Script
 startUi()
-
-"xf6DDCKeyQgWKPKQ"
-"84f1ee1dbdd2948b0106d5a302d7ed37ea3b8c4bd4a3b65bf626fceb24477e03"
