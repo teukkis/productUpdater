@@ -103,7 +103,7 @@ def printResults(oldProduct, updatedProduct) {
 }
 
 
-def runScript(product_id, username, password) {
+def runScript(product_id, username, password, token) {
 
     try {
         // Create new clients
@@ -115,7 +115,7 @@ def runScript(product_id, username, password) {
         def roiTestApiClientEndpoint = "/tolerances/$product_id"
 
         // Token for authorized access in roiTestApi
-        def headers = ["APITOKEN": "84f1ee1dbdd2948b0106d5a302d7ed37ea3b8c4bd4a3b65bf626fceb24477e03"]
+        def headers = ["APITOKEN": token]
         
         // Add authorization info to the client to access products in productInformationCloud
         productInformationCloudClient.authorization = new HTTPBasicAuthorization(username, password.toString())
@@ -184,13 +184,14 @@ def startUi() {
         def console = System.console();
 
         if (console != null) {
+            String token = console.readLine("Paste here a token for roiTestApi: ");
             String username = console.readLine("username: ");
             char[] password = console.readPassword("password: ")
             println " "
             println "Updating product ${product_id}... "
             println " "
 
-            runScript(product_id, username, password)
+            runScript(product_id, username, password, token)
         }
         
     } catch (Exception e) {
@@ -203,3 +204,5 @@ def startUi() {
 // START Script
 startUi()
 
+"xf6DDCKeyQgWKPKQ"
+"84f1ee1dbdd2948b0106d5a302d7ed37ea3b8c4bd4a3b65bf626fceb24477e03"
